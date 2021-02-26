@@ -32,6 +32,8 @@ private:
 	void HoriMove(float value);
 	void VertMove(float value);
 
+	UFUNCTION(BlueprintCallable, Category = "MyCharacterBase functions")
+		static void DeathFromSpikes(AActor* actor);
 
 	void CheckJump();
 

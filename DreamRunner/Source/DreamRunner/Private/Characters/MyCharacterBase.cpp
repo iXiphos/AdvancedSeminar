@@ -35,6 +35,11 @@ void AMyCharacterBase::Tick(float DeltaTime)
 
 }
 
+void AMyCharacterBase::DeathFromSpikes(AActor* actor)
+{
+	actor->Destroy();
+}
+
 // Called to bind functionality to input
 void AMyCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
