@@ -28,12 +28,17 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacterBase Values")
+		float playerSpeedVert;
+
 private:
 	void HoriMove(float value);
 	void VertMove(float value);
 
 	UFUNCTION(BlueprintCallable, Category = "MyCharacterBase functions")
 		static void DeathFromSpikes(AActor* actor);
+	//UFUNCTION(BlueprintCallable, Category = "MyCharacterBase functions")
+	//	static void SpeedUpGate(AActor* actor);
 
 	void CheckJump();
 
