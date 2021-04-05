@@ -19,7 +19,7 @@ AMyCharacterBase::AMyCharacterBase()
 void AMyCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	playerSpeedVert = 0.7f;
 }
 
 // Called every frame
@@ -31,14 +31,18 @@ void AMyCharacterBase::Tick(float DeltaTime)
 	{
 		Jump();
 	}
-	VertMove(1);
-
+	VertMove(playerSpeedVert);
 }
 
 void AMyCharacterBase::DeathFromSpikes(AActor* actor)
 {
 	actor->Destroy();
 }
+
+//void AMyCharacterBase::SpeedUpGate(AActor* actor)
+//{
+//
+//}
 
 // Called to bind functionality to input
 void AMyCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -65,7 +69,7 @@ void AMyCharacterBase::HoriMove(float value)
 
 void AMyCharacterBase::VertMove(float value)
 {
-	AddMovementInput(GetActorForwardVector(), 2);
+	AddMovementInput(GetActorForwardVector(), value);
 }
 
 void AMyCharacterBase::CheckJump()
