@@ -31,6 +31,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacterBase Values")
 		float playerSpeedVert;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacterBase Values")
+		int isInverseMovement;
+
 private:
 	void HoriMove(float value);
 	void VertMove(float value);
