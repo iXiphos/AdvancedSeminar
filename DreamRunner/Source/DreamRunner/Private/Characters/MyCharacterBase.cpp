@@ -20,6 +20,7 @@ void AMyCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	playerSpeedVert = 0.7f;
+	isInverseMovement = 1;
 }
 
 // Called every frame
@@ -63,7 +64,7 @@ void AMyCharacterBase::HoriMove(float value)
 	value *= 2;
 	if (value)
 	{
-		AddMovementInput(GetActorRightVector(), value);
+		AddMovementInput(GetActorRightVector(), value * isInverseMovement);
 	}
 }
 
