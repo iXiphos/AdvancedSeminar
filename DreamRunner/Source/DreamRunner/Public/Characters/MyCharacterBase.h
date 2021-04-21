@@ -34,6 +34,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacterBase Values")
 		int isInverseMovement;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacterBase Values")
+		bool jumping;
+
 private:
 	void HoriMove(float value);
 	void VertMove(float value);
@@ -44,7 +47,4 @@ private:
 	//	static void SpeedUpGate(AActor* actor);
 
 	void CheckJump();
-
-	UPROPERTY()
-		bool jumping;
 };
